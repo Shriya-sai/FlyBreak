@@ -12,8 +12,8 @@ const nodes=[
  {id:'loop',name:'Loop 7',role:'LOOP',x:500,y:455,s:46,l:39,count:12,f:'A lateral detour that can feed two downstream gates. Annoyingly resourceful.'},
  {id:'backup',name:'Back Alley',role:'GATE',x:675,y:225,s:38,l:56,count:11,f:'A shared convergence gate used by two alternate target routes.'},
  {id:'ghost',name:'Ghost Gate',role:'GATE',x:690,y:65,s:27,l:29,count:8,f:'A weak, target-specific gate hidden behind stronger routes until the network is damaged.'},
- {id:'dance',name:'Courtship output',role:'PROTECTED',x:685,y:390,s:34,l:47,count:23,kind:'protected',f:'Protected output one. Please keep the dance floor operational.',locked:true},
- {id:'orient',name:'Orientation output',role:'PROTECTED',x:820,y:475,s:29,l:36,count:19,kind:'protected',f:'Protected output two. It would prefer to continue knowing which way is up.',locked:true},
+ {id:'dance',name:'Protected pathway A',role:'PROTECTED',x:685,y:390,s:34,l:47,count:23,kind:'protected',f:'An unrelated structural route used to measure collateral damage. Preserve its source-to-output connectivity.',locked:true},
+ {id:'orient',name:'Protected pathway B',role:'PROTECTED',x:820,y:475,s:29,l:36,count:19,kind:'protected',f:'A second unrelated structural route. It prevents broad network destruction from scoring as a precise intervention.',locked:true},
  {id:'escape',name:'Escape command',role:'TARGET',x:840,y:115,s:40,l:100,count:29,kind:'target',f:'The red exit. Remaining route capacity determines how much signal gets through.',locked:true}
 ];
 const edges=[['eye','relayA',9],['eye','relayB',6],['eye','relayC',4],['relayA','hub',9],['relayA','dance',4],['relayB','hub',3],['relayB','sidecar',6],['relayC','cross',4],['hub','gate',9],['hub','split',7],['sidecar','loop',6],['sidecar','cross',3],['sidecar','orient',4],['cross','ghost',4],['gate','escape',9],['ghost','escape',4],['split','backup',6],['split','dance',8],['split','loop',4],['loop','backup',5],['loop','orient',7],['backup','escape',7]];
