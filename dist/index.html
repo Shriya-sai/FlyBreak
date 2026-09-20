@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="tutorial.css" />
 </head>
 <body>
   <div class="grain"></div>
@@ -32,8 +33,9 @@
     <section class="game-grid">
       <aside class="panel loadout">
         <div class="panel-title"><span>01</span> YOUR LOADOUT</div>
-        <button class="tool selected" data-tool="lesion"><span class="tool-icon">×</span><div><strong>LESION</strong><small>Permanent node removal</small></div><b id="lesionsLeft">3</b></button>
-        <button class="tool" data-tool="jam"><span class="tool-icon">⌁</span><div><strong>JAM</strong><small>Blocks the next pulse</small></div><b id="jamsLeft">2</b></button>
+        <button class="tool selected" data-tool="lesion"><span class="tool-icon">×</span><div><strong>CUT</strong><small>Permanent structural lesion</small></div><b id="lesionsLeft">3</b></button>
+        <button class="tool" data-tool="jam"><span class="tool-icon">⌁</span><div><strong>JAM</strong><small>Blocks only the next pulse</small></div><b id="jamsLeft">2</b></button>
+        <div class="tool-help"><p><strong>CUT</strong> removes a node and every connection through it for the whole mission.</p><p><strong>JAM</strong> is temporary. Use it to test where the signal reroutes before committing a cut.</p></div>
         <div class="brief">
           <small>MISSION PARAMETERS</small>
           <dl><div><dt>Target</dt><dd>Escape command</dd></div><div><dt>Protect</dt><dd>2 outputs</dd></div><div><dt>Active routes</dt><dd>Up to 3</dd></div></dl>
@@ -44,13 +46,15 @@
       <div class="board-wrap">
         <div class="board-head"><div><span class="live-dot"></span><span id="systemState">NETWORK INTACT</span></div><div class="legend"><span class="cyan">● SIGNAL</span><span class="amber">● REROUTE</span><span class="red">● DISABLED</span></div></div>
         <svg id="board" viewBox="0 0 900 570" role="img" aria-label="Interactive directed neural circuit"></svg>
+        <div id="routeCards" class="route-cards hidden"></div>
         <div id="toast" class="toast">Select a node to inspect it.</div>
         <div id="startOverlay" class="start-overlay">
           <div class="fly-badge">⌁</div><span>TACTICAL CONNECTOME // TRAINING SIM</span>
           <h2>There’s a signal in the walls.</h2>
-          <p>It wants the red exit through three overlapping routes. You have six turns and five bad ideas. Make one of them brilliant.</p>
+          <p>A visual signal will race from the <b>cyan source</b> to the <b>red escape command</b>. Stop it—but preserve both <b>purple outputs</b>.</p>
+          <div class="onboard-legend"><span><i class="source-dot"></i>STARTS HERE</span><span><i class="target-dot"></i>STOP IT HERE</span><span><i class="protect-dot"></i>KEEP THESE ALIVE</span></div>
           <button id="overlayStart" class="primary">START THE CLOCK <span>→</span></button>
-          <small>Average mission time: 74 seconds</small>
+          <small>The tiny fly couriers are a visual metaphor for graph propagation—not biological activity.</small>
         </div>
       </div>
 
@@ -68,7 +72,7 @@
       </aside>
     </section>
 
-    <footer><p><strong>MODEL NOTE</strong> Signal propagation over a curated directed, weighted structural graph. This is a hypothesis-generating game—not a biophysical simulation or a claim about fly behaviour.</p><button id="methodBtn">HOW IT WORKS +</button></footer>
+    <footer><p><strong>MODEL NOTE</strong> Signal propagation over a curated directed, weighted structural graph. This is a hypothesis-generating game—not a biophysical simulation or a claim about fly behaviour.</p><div><button id="flyBtn">WHY A FRUIT FLY? +</button><button id="methodBtn">HOW IT WORKS +</button></div></footer>
   </main>
 
   <dialog id="resultDialog">
@@ -82,7 +86,8 @@
     </div>
   </dialog>
 
-  <dialog id="methodDialog"><div class="method-card"><button class="close" aria-label="Close">×</button><span class="eyebrow">UNDER THE HOOD</span><h2>Structural, transparent, deterministic.</h2><p>Each turn sends three packets along the strongest available directed routes. A lesion removes all incoming and outgoing contributions. A jam masks one node for the next propagation step. Routes are recomputed after every intervention.</p><div class="formula">PRECISION = TARGET SUPPRESSION × PROTECTED PRESERVATION</div><p class="muted">This demo uses a curated, biologically inspired circuit artifact for reliable gameplay. The production data pipeline is designed to substitute verified neuron-type connectivity without changing the game engine.</p></div></dialog>
+  <dialog id="methodDialog"><div class="method-card"><button class="close" aria-label="Close">×</button><span class="eyebrow">UNDER THE HOOD</span><h2>Structural, transparent, deterministic.</h2><p>Each turn identifies up to three of the strongest available directed routes. A Cut removes all incoming and outgoing contributions permanently. A Jam masks one node for the next propagation step. Route capacity is recomputed after every intervention.</p><div class="formula">PRECISION = TARGET SUPPRESSION × PROTECTED PRESERVATION</div><p class="muted">This demo uses a curated, biologically inspired circuit artifact for reliable gameplay. The production data pipeline is designed to substitute verified neuron-type connectivity without changing the game engine.</p></div></dialog>
+  <dialog id="flyDialog"><div class="method-card"><button class="close" aria-label="Close">×</button><span class="eyebrow">THE FRUIT-FLY CONNECTION</span><h2>A huge brain in a tiny package.</h2><p>A connectome is a wiring map of neurons and their connections. FlyBreak turns a small directed, weighted circuit into a strategy puzzle: nodes stand for aggregated neuron groups, lines represent structural connections, and line strength influences route capacity.</p><div class="formula">CURRENT DEMO: CURATED GAMEPLAY CIRCUIT<br>FINAL LEVEL: VERIFIED CONNECTOME-DERIVED CIRCUIT</div><p class="muted">Names such as “Grand Central” and the courier flies are game language, not official neuron annotations. The model explores structural influence; it does not simulate a living fly or prove behaviour.</p></div></dialog>
   <script src="game.js"></script>
 </body>
 </html>
