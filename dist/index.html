@@ -24,17 +24,18 @@
   <div class="grain"></div>
   <main class="app">
     <header>
-      <div class="brand"><span class="mark">F/B</span><div><strong>FlyBreak</strong><small>NEURAL HEIST // MISSION 01</small></div></div>
+      <div class="brand"><span class="mark">F/B</span><div><strong>FlyBreak</strong><small>REAL DATA // MALECNS V1.0</small></div></div>
       <div class="top-stats">
         <div><small>TURN</small><strong id="turnTop">0/6</strong></div>
+        <div><small>FLY ETA</small><strong id="timerTop">00:30</strong></div>
         <div><small>CONTAINMENT</small><strong id="containTop">0%</strong></div>
         <button id="resetBtn" class="icon-btn" aria-label="Restart mission">↻ RESET</button>
       </div>
     </header>
 
     <section class="mission-strip">
-      <div class="mission-copy"><span class="eyebrow">OPERATION: QUIET EXIT</span><h1>Stop the signal. <em>Preserve the network.</em></h1></div>
-      <p>Intercept structural propagation before it reaches the target. Preserve both unrelated pathways and avoid indiscriminate disruption.</p>
+      <div class="mission-copy"><span class="eyebrow">MALECNS v1.0 // LIVE HUNT</span><h1>Block LC4 → DNg108. <em>Beat the fly.</em></h1></div>
+      <p>Real male synapse weights drive four routes. Preserve structural reachability to DNa13 and DNa02.</p>
       <button id="startBtn" class="primary">BEGIN HEIST <span>→</span></button>
     </section>
 
@@ -46,7 +47,7 @@
         <div class="tool-help"><p><strong>CUT</strong> removes a node and every connection through it for the whole mission.</p><p><strong>JAM</strong> is temporary. Use it to test where the signal reroutes before committing a cut.</p></div>
         <div class="brief">
           <small>MISSION PARAMETERS</small>
-          <dl><div><dt>Target</dt><dd>Escape command</dd></div><div><dt>Protect</dt><dd>2 outputs</dd></div><div><dt>Active routes</dt><dd>Up to 4</dd></div></dl>
+          <dl><div><dt>Source</dt><dd>LC4</dd></div><div><dt>Target</dt><dd>DNg108</dd></div><div><dt>Protect</dt><dd>DNa13 · DNa02</dd></div></dl>
         </div>
         <div id="collateralStatus" class="collateral-status"><span>COLLATERAL DAMAGE</span><strong id="collateralValue">0%</strong><small id="collateralNote">Protected routes intact</small></div>
         <button id="advanceBtn" class="advance" disabled>ADVANCE SIGNAL <span>→</span></button>
@@ -82,7 +83,7 @@
       </aside>
     </section>
 
-    <footer><p><strong>MODEL NOTE</strong> Signal propagation over a curated directed, weighted structural graph. This is a hypothesis-generating game—not a biophysical simulation or a claim about fly behaviour.</p><div><button id="flyBtn">WHY A FRUIT FLY? +</button><button id="methodBtn">HOW IT WORKS +</button></div></footer>
+    <footer><p><strong>DATA NOTE</strong> MaleCNS v1.0 type groups and measured male synapse weights. Graph propagation is a structural hypothesis—not biological neural activity.</p><div><button id="flyBtn">REAL DATA +</button><button id="methodBtn">HOW IT WORKS +</button></div></footer>
   </main>
 
   <dialog id="resultDialog">
@@ -96,8 +97,8 @@
     </div>
   </dialog>
 
-  <dialog id="methodDialog"><div class="method-card"><button class="close" aria-label="Close">×</button><span class="eyebrow">UNDER THE HOOD</span><h2>Structural, transparent, deterministic.</h2><p>Each turn identifies up to four of the strongest available directed routes. A Cut removes all incoming and outgoing contributions permanently. A Jam masks one node for the next propagation step. Route capacity is recomputed after every intervention.</p><div class="formula">PRECISION = TARGET SUPPRESSION × PROTECTED PRESERVATION</div><p class="muted">This demo uses a curated, biologically inspired circuit artifact for reliable gameplay. The production data pipeline is designed to substitute verified neuron-type connectivity without changing the game engine.</p></div></dialog>
-  <dialog id="flyDialog"><div class="method-card"><button class="close" aria-label="Close">×</button><span class="eyebrow">THE FRUIT-FLY CONNECTION</span><h2>A huge brain in a tiny package.</h2><p>A connectome is a wiring map of neurons and their connections. FlyBreak turns a small directed, weighted circuit into a strategy puzzle: nodes stand for aggregated neuron groups, lines represent structural connections, and line strength influences route capacity.</p><div class="formula">CURRENT DEMO: CURATED GAMEPLAY CIRCUIT<br>FINAL LEVEL: VERIFIED CONNECTOME-DERIVED CIRCUIT</div><p class="muted">Names such as “Grand Central” and the courier flies are game language, not official neuron annotations. The model explores structural influence; it does not simulate a living fly or prove behaviour.</p></div></dialog>
+  <dialog id="methodDialog"><div class="method-card"><button class="close" aria-label="Close">×</button><span class="eyebrow">UNDER THE HOOD</span><h2>Structural, transparent, deterministic.</h2><p>Every four seconds the opponent recomputes up to four strongest directed LC4→DNg108 routes. A Cut removes a type group and all incident connections. A Jam masks it for one pulse. Route capacity is the weakest measured edge on a path.</p><div class="formula">SCORE = TARGET SUPPRESSION − COLLATERAL PENALTY</div><p class="muted">The model uses structural connections only. It does not include membrane dynamics, physiology, neuromodulation, plasticity or embodiment.</p></div></dialog>
+  <dialog id="flyDialog"><div class="method-card"><button class="close" aria-label="Close">×</button><span class="eyebrow">VERIFIED DATA PROVENANCE</span><h2>This level is derived from MaleCNS v1.0.</h2><p>Nodes are real cross-matched MaleCNS cell-type groups. Edges are measured male synapse totals from the official <code>mcns_fw_edge_comp.feather</code> artifact. The level uses LC4 as source, DNg108 as target, and DNa13 plus DNa02 as protected outputs.</p><div class="formula">15 REAL TYPE GROUPS · 29 DISPLAYED EDGES<br>MINIMUM EDGE WEIGHT: 120 MALE SYNAPSES</div><p class="muted">The circuit was curated from the official table for gameplay and is licensed CC BY. Courier flies visualize graph routing; they are not measured neural activity or evidence of behaviour.</p></div></dialog>
   <script src="game.js"></script>
 </body>
 </html>

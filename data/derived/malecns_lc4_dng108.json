@@ -1,0 +1,236 @@
+{
+  "metadata": {
+    "dataset": "MaleCNS v1.0",
+    "artifact": "mcns_fw_edge_comp.feather",
+    "source": "flyconnectome/2025malecns supplemental_data",
+    "license": "CC BY",
+    "source_population": "LC4",
+    "target_population": "DNg108",
+    "protected_populations": [
+      "DNa13",
+      "DNa02"
+    ],
+    "aggregation": "cross-matched cell-type groups",
+    "minimum_male_synapse_weight": 120,
+    "selection_note": "Curated LC4-to-descending subgraph with protected off-target outputs."
+  },
+  "nodes": [
+    {
+      "id": "DNa02",
+      "role": "protected"
+    },
+    {
+      "id": "DNa13",
+      "role": "protected"
+    },
+    {
+      "id": "DNg108",
+      "role": "target"
+    },
+    {
+      "id": "DNg52",
+      "role": "gate"
+    },
+    {
+      "id": "DNp02",
+      "role": "gate"
+    },
+    {
+      "id": "DNp04",
+      "role": "gate"
+    },
+    {
+      "id": "DNp35",
+      "role": "gate"
+    },
+    {
+      "id": "LAL028",
+      "role": "relay"
+    },
+    {
+      "id": "LC31b",
+      "role": "relay"
+    },
+    {
+      "id": "LC4",
+      "role": "source"
+    },
+    {
+      "id": "LT51",
+      "role": "relay"
+    },
+    {
+      "id": "PVLP046",
+      "role": "relay"
+    },
+    {
+      "id": "PVLP137",
+      "role": "relay"
+    },
+    {
+      "id": "PVLP141",
+      "role": "relay"
+    },
+    {
+      "id": "SAD064",
+      "role": "relay"
+    }
+  ],
+  "edges": [
+    {
+      "source": "DNg52",
+      "target": "DNg108",
+      "weight": 458
+    },
+    {
+      "source": "DNp02",
+      "target": "DNg108",
+      "weight": 552
+    },
+    {
+      "source": "DNp04",
+      "target": "DNg108",
+      "weight": 411
+    },
+    {
+      "source": "DNp04",
+      "target": "DNp35",
+      "weight": 220
+    },
+    {
+      "source": "DNp35",
+      "target": "DNg108",
+      "weight": 708
+    },
+    {
+      "source": "LAL028",
+      "target": "DNa02",
+      "weight": 1063
+    },
+    {
+      "source": "LAL028",
+      "target": "DNa13",
+      "weight": 706
+    },
+    {
+      "source": "LC31b",
+      "target": "LAL028",
+      "weight": 673
+    },
+    {
+      "source": "LC31b",
+      "target": "PVLP137",
+      "weight": 381
+    },
+    {
+      "source": "LC31b",
+      "target": "PVLP141",
+      "weight": 283
+    },
+    {
+      "source": "LC4",
+      "target": "DNp02",
+      "weight": 4209
+    },
+    {
+      "source": "LC4",
+      "target": "DNp04",
+      "weight": 11597
+    },
+    {
+      "source": "LC4",
+      "target": "DNp35",
+      "weight": 464
+    },
+    {
+      "source": "LC4",
+      "target": "LC31b",
+      "weight": 586
+    },
+    {
+      "source": "LC4",
+      "target": "PVLP046",
+      "weight": 693
+    },
+    {
+      "source": "LC4",
+      "target": "PVLP137",
+      "weight": 855
+    },
+    {
+      "source": "LC4",
+      "target": "PVLP141",
+      "weight": 1539
+    },
+    {
+      "source": "LC4",
+      "target": "SAD064",
+      "weight": 1732
+    },
+    {
+      "source": "LT51",
+      "target": "DNa02",
+      "weight": 320
+    },
+    {
+      "source": "LT51",
+      "target": "DNa13",
+      "weight": 862
+    },
+    {
+      "source": "PVLP046",
+      "target": "DNp04",
+      "weight": 614
+    },
+    {
+      "source": "PVLP046",
+      "target": "DNp35",
+      "weight": 123
+    },
+    {
+      "source": "PVLP046",
+      "target": "LC4",
+      "weight": 3768
+    },
+    {
+      "source": "PVLP046",
+      "target": "PVLP137",
+      "weight": 135
+    },
+    {
+      "source": "PVLP137",
+      "target": "DNa13",
+      "weight": 346
+    },
+    {
+      "source": "PVLP137",
+      "target": "DNg52",
+      "weight": 397
+    },
+    {
+      "source": "PVLP141",
+      "target": "DNa02",
+      "weight": 135
+    },
+    {
+      "source": "PVLP141",
+      "target": "DNa13",
+      "weight": 466
+    },
+    {
+      "source": "PVLP141",
+      "target": "LT51",
+      "weight": 737
+    },
+    {
+      "source": "SAD064",
+      "target": "DNp02",
+      "weight": 570
+    },
+    {
+      "source": "SAD064",
+      "target": "LC4",
+      "weight": 1241
+    }
+  ]
+}
