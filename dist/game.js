@@ -2,18 +2,18 @@ const NS='http://www.w3.org/2000/svg';
 const nodes=[
  {id:'eye',name:'Visual input',role:'SOURCE',x:55,y:275,s:25,l:100,count:42,kind:'source',f:'The signal enters here. Lesioning the front door is both rude and disallowed.',locked:true},
  {id:'relayA',name:'Optic relay',role:'RELAY',x:180,y:145,s:68,l:74,count:31,f:'A busy relay shared with protected traffic. Powerful, but painfully indiscriminate.'},
- {id:'relayB',name:'Shadow relay',role:'RELAY',x:175,y:390,s:43,l:45,count:16,f:'A quieter entrance into the backup system. It becomes important when the obvious route breaks.'},
- {id:'relayC',name:'Whisper relay',role:'RELAY',x:165,y:490,s:29,l:24,count:9,f:'A weak fourth entrance. Easy to ignore until every louder route is gone.'},
+ {id:'relayB',name:'Shadow relay',role:'RELAY',x:175,y:330,s:43,l:45,count:16,f:'A quieter entrance into the backup system. It becomes important when the obvious route breaks.'},
+ {id:'relayC',name:'Whisper relay',role:'RELAY',x:165,y:410,s:29,l:24,count:9,f:'A weak fourth entrance. Easy to ignore until every louder route is gone.'},
  {id:'hub',name:'Grand Central',role:'HUB',x:335,y:210,s:94,l:89,count:57,f:'The obvious hub. Huge impact, huge collateral, magnificent lack of restraint.'},
- {id:'sidecar',name:'Sidecar 6',role:'RELAY',x:335,y:430,s:41,l:48,count:14,f:'A low-capacity detour. Grand Central does not control it. Grand Central is upset about this.'},
- {id:'cross',name:'Crossfeed 3',role:'CROSSFEED',x:345,y:490,s:36,l:31,count:10,f:'A low-volume cross-feed linking the shadow and whisper routes.'},
+ {id:'sidecar',name:'Sidecar 6',role:'RELAY',x:335,y:350,s:41,l:48,count:14,f:'A low-capacity detour. Grand Central does not control it. Grand Central is upset about this.'},
+ {id:'cross',name:'Crossfeed 3',role:'CROSSFEED',x:345,y:425,s:36,l:31,count:10,f:'A low-volume cross-feed linking the shadow and whisper routes.'},
  {id:'gate',name:'LC12 Gate',role:'GATE',x:515,y:105,s:51,l:82,count:18,f:'A narrow gate specific to the strongest target route. High precision, but not the whole answer.'},
  {id:'split',name:'Fork 9',role:'SPLITTER',x:505,y:280,s:77,l:61,count:26,f:'A shared splitter feeding a target bypass and protected output. Cutting it is effective and messy.'},
- {id:'loop',name:'Loop 7',role:'LOOP',x:500,y:455,s:46,l:39,count:12,f:'A lateral detour that can feed two downstream gates. Annoyingly resourceful.'},
+ {id:'loop',name:'Loop 7',role:'LOOP',x:500,y:365,s:46,l:39,count:12,f:'A lateral detour that can feed two downstream gates. Annoyingly resourceful.'},
  {id:'backup',name:'Back Alley',role:'GATE',x:675,y:225,s:38,l:56,count:11,f:'A shared convergence gate used by two alternate target routes.'},
  {id:'ghost',name:'Ghost Gate',role:'GATE',x:690,y:65,s:27,l:29,count:8,f:'A weak, target-specific gate hidden behind stronger routes until the network is damaged.'},
- {id:'dance',name:'Protected pathway A',role:'PROTECTED',x:685,y:390,s:34,l:47,count:23,kind:'protected',f:'An unrelated structural route used to measure collateral damage. Preserve its source-to-output connectivity.',locked:true},
- {id:'orient',name:'Protected pathway B',role:'PROTECTED',x:820,y:475,s:29,l:36,count:19,kind:'protected',f:'A second unrelated structural route. It prevents broad network destruction from scoring as a precise intervention.',locked:true},
+ {id:'dance',name:'Protected pathway A',role:'PROTECTED',x:685,y:330,s:34,l:47,count:23,kind:'protected',f:'An unrelated structural route used to measure collateral damage. Preserve its source-to-output connectivity.',locked:true},
+ {id:'orient',name:'Protected pathway B',role:'PROTECTED',x:820,y:410,s:29,l:36,count:19,kind:'protected',f:'A second unrelated structural route. It prevents broad network destruction from scoring as a precise intervention.',locked:true},
  {id:'escape',name:'Escape command',role:'TARGET',x:840,y:115,s:40,l:100,count:29,kind:'target',f:'The red exit. Remaining route capacity determines how much signal gets through.',locked:true}
 ];
 const edges=[['eye','relayA',9],['eye','relayB',6],['eye','relayC',4],['relayA','hub',9],['relayA','dance',4],['relayB','hub',3],['relayB','sidecar',6],['relayC','cross',4],['hub','gate',9],['hub','split',7],['sidecar','loop',6],['sidecar','cross',3],['sidecar','orient',4],['cross','ghost',4],['gate','escape',9],['ghost','escape',4],['split','backup',6],['split','dance',8],['split','loop',4],['loop','backup',5],['loop','orient',7],['backup','escape',7]];
