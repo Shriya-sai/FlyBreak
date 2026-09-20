@@ -35,14 +35,14 @@
 
     <section class="mission-strip">
       <div class="mission-copy"><span class="eyebrow">MALECNS v1.0 // LIVE HUNT</span><h1>Block LC4 → DNg108. <em>Beat the fly.</em></h1></div>
-      <p>Real male synapse weights drive four routes. Preserve structural reachability to DNa13 and DNa02.</p>
+      <p>Six measured routes can carry the signal. Preserve structural reachability to DNa13 and DNa02.</p>
       <button id="startBtn" class="primary">BEGIN HEIST <span>→</span></button>
     </section>
 
     <section class="game-grid">
       <aside class="panel loadout">
         <div class="panel-title"><span>01</span> YOUR LOADOUT</div>
-        <button class="tool selected" data-tool="lesion"><span class="tool-icon">×</span><div><strong>CUT</strong><small>Permanent structural lesion</small></div><b id="lesionsLeft">3</b></button>
+        <button class="tool selected" data-tool="lesion"><span class="tool-icon">×</span><div><strong>CUT</strong><small>Permanent structural lesion</small></div><b id="lesionsLeft">4</b></button>
         <button class="tool" data-tool="jam"><span class="tool-icon">⌁</span><div><strong>JAM</strong><small>Blocks only the next pulse</small></div><b id="jamsLeft">2</b></button>
         <div class="tool-help"><p><strong>CUT</strong> removes a node and every connection through it for the whole mission.</p><p><strong>JAM</strong> is temporary. Use it to test where the signal reroutes before committing a cut.</p></div>
         <div class="brief">
@@ -97,8 +97,8 @@
     </div>
   </dialog>
 
-  <dialog id="methodDialog"><div class="method-card"><button class="close" aria-label="Close">×</button><span class="eyebrow">UNDER THE HOOD</span><h2>Structural, transparent, deterministic.</h2><p>Every four seconds the opponent recomputes up to four strongest directed LC4→DNg108 routes. A Cut removes a type group and all incident connections. A Jam masks it for one pulse. Route capacity is the weakest measured edge on a path.</p><div class="formula">SCORE = TARGET SUPPRESSION − COLLATERAL PENALTY</div><p class="muted">The model uses structural connections only. It does not include membrane dynamics, physiology, neuromodulation, plasticity or embodiment.</p></div></dialog>
-  <dialog id="flyDialog"><div class="method-card"><button class="close" aria-label="Close">×</button><span class="eyebrow">VERIFIED DATA PROVENANCE</span><h2>This level is derived from MaleCNS v1.0.</h2><p>Nodes are real cross-matched MaleCNS cell-type groups. Edges are measured male synapse totals from the official <code>mcns_fw_edge_comp.feather</code> artifact. The level uses LC4 as source, DNg108 as target, and DNa13 plus DNa02 as protected outputs.</p><div class="formula">15 REAL TYPE GROUPS · 29 DISPLAYED EDGES<br>MINIMUM EDGE WEIGHT: 120 MALE SYNAPSES</div><p class="muted">The circuit was curated from the official table for gameplay and is licensed CC BY. Courier flies visualize graph routing; they are not measured neural activity or evidence of behaviour.</p></div></dialog>
+  <dialog id="methodDialog"><div class="method-card"><button class="close" aria-label="Close">×</button><span class="eyebrow">UNDER THE HOOD</span><h2>Structural, transparent, deterministic.</h2><p>Every four seconds the opponent recomputes up to six strongest directed LC4→DNg108 routes with distinct final gates. A Cut removes a type group and all incident connections. A Jam masks it for one pulse. Route capacity is the weakest measured edge on a path.</p><div class="formula">SCORE = TARGET SUPPRESSION − COLLATERAL PENALTY</div><p class="muted">The model uses structural connections only. It does not include membrane dynamics, physiology, neuromodulation, plasticity or embodiment.</p></div></dialog>
+  <dialog id="flyDialog"><div class="method-card"><button class="close" aria-label="Close">×</button><span class="eyebrow">VERIFIED DATA PROVENANCE</span><h2>This level is derived from MaleCNS v1.0.</h2><p>Nodes are real cross-matched MaleCNS cell-type groups. Edges are measured male synapse totals from the official <code>mcns_fw_edge_comp.feather</code> artifact. The level uses LC4 as source, DNg108 as target, and DNa13 plus DNa02 as protected outputs.</p><div class="formula">17 REAL TYPE GROUPS · 35 DISPLAYED EDGES<br>MINIMUM EDGE WEIGHT: 120 MALE SYNAPSES</div><p class="muted">The circuit was curated from the official table for gameplay and is licensed CC BY. Courier flies visualize graph routing; they are not measured neural activity or evidence of behaviour.</p></div></dialog>
   <script src="game.js"></script>
 </body>
 </html>

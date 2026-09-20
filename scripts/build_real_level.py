@@ -10,10 +10,10 @@ OUTPUT = ROOT / "data/derived/malecns_lc4_dng108.json"
 ROLES = {
     "LC4": "source", "DNg108": "target", "DNa13": "protected",
     "DNa02": "protected", "DNp02": "gate", "DNp04": "gate",
-    "DNp35": "gate", "DNg52": "gate",
+    "DNp35": "gate", "DNp06": "gate", "DNp11": "gate", "DNg52": "gate",
 }
 NODES = {
-    "LC4", "SAD064", "DNp02", "PVLP046", "DNp04", "DNp35",
+    "LC4", "SAD064", "DNp02", "PVLP046", "DNp04", "DNp35", "DNp06", "DNp11",
     "PVLP137", "DNg52", "DNg108", "PVLP141", "LT51", "DNa13",
     "LC31b", "LAL028", "DNa02",
 }

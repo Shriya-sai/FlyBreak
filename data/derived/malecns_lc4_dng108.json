@@ -40,6 +40,14 @@
       "role": "gate"
     },
     {
+      "id": "DNp06",
+      "role": "gate"
+    },
+    {
+      "id": "DNp11",
+      "role": "gate"
+    },
+    {
       "id": "DNp35",
       "role": "gate"
     },
@@ -98,6 +106,16 @@
       "weight": 220
     },
     {
+      "source": "DNp06",
+      "target": "DNg108",
+      "weight": 385
+    },
+    {
+      "source": "DNp11",
+      "target": "DNg108",
+      "weight": 325
+    },
+    {
       "source": "DNp35",
       "target": "DNg108",
       "weight": 708
@@ -136,6 +154,16 @@
       "source": "LC4",
       "target": "DNp04",
       "weight": 11597
+    },
+    {
+      "source": "LC4",
+      "target": "DNp06",
+      "weight": 1152
+    },
+    {
+      "source": "LC4",
+      "target": "DNp11",
+      "weight": 3666
     },
     {
       "source": "LC4",
@@ -226,6 +254,16 @@
       "source": "SAD064",
       "target": "DNp02",
       "weight": 570
+    },
+    {
+      "source": "SAD064",
+      "target": "DNp06",
+      "weight": 195
+    },
+    {
+      "source": "SAD064",
+      "target": "DNp11",
+      "weight": 576
     },
     {
       "source": "SAD064",
