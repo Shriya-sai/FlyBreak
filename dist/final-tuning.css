@@ -1,0 +1,4 @@
+.cinematic-image,.cinematic:after,.cinematic-copy,.cinematic-scan,.neural-flash{animation-duration:10s!important}
+.route-cards{grid-template-columns:repeat(4,1fr)}
+@media(max-width:900px){.route-cards{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:760px){.route-cards{grid-template-columns:1fr}.route-card:nth-child(n+2){display:none}}
