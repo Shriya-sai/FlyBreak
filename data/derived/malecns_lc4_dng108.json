@@ -11,10 +11,22 @@
       "DNa02"
     ],
     "aggregation": "cross-matched cell-type groups",
-    "minimum_male_synapse_weight": 120,
-    "selection_note": "Curated LC4-to-descending subgraph with protected off-target outputs."
+    "minimum_male_synapse_weight": 19,
+    "selection_note": "Curated LC4-to-descending subgraph with two measured low-weight shared-gate routes and protected off-target outputs."
   },
   "nodes": [
+    {
+      "id": "AN_multi_12",
+      "role": "shared_gate"
+    },
+    {
+      "id": "CB0623",
+      "role": "relay"
+    },
+    {
+      "id": "CL342",
+      "role": "shared_gate"
+    },
     {
       "id": "DNa02",
       "role": "protected"
@@ -68,6 +80,10 @@
       "role": "relay"
     },
     {
+      "id": "PLP060",
+      "role": "relay"
+    },
+    {
       "id": "PVLP046",
       "role": "relay"
     },
@@ -85,6 +101,36 @@
     }
   ],
   "edges": [
+    {
+      "source": "AN_multi_12",
+      "target": "CB0623",
+      "weight": 227
+    },
+    {
+      "source": "AN_multi_12",
+      "target": "DNa13",
+      "weight": 443
+    },
+    {
+      "source": "AN_multi_12",
+      "target": "DNg108",
+      "weight": 594
+    },
+    {
+      "source": "CB0623",
+      "target": "AN_multi_12",
+      "weight": 19
+    },
+    {
+      "source": "CL342",
+      "target": "DNa13",
+      "weight": 238
+    },
+    {
+      "source": "CL342",
+      "target": "DNg108",
+      "weight": 394
+    },
     {
       "source": "DNg52",
       "target": "DNg108",
@@ -147,6 +193,11 @@
     },
     {
       "source": "LC4",
+      "target": "CB0623",
+      "weight": 105
+    },
+    {
+      "source": "LC4",
       "target": "DNp02",
       "weight": 4209
     },
@@ -177,6 +228,11 @@
     },
     {
       "source": "LC4",
+      "target": "PLP060",
+      "weight": 57
+    },
+    {
+      "source": "LC4",
       "target": "PVLP046",
       "weight": 693
     },
@@ -204,6 +260,21 @@
       "source": "LT51",
       "target": "DNa13",
       "weight": 862
+    },
+    {
+      "source": "LT51",
+      "target": "PLP060",
+      "weight": 148
+    },
+    {
+      "source": "PLP060",
+      "target": "CL342",
+      "weight": 51
+    },
+    {
+      "source": "PLP060",
+      "target": "SAD064",
+      "weight": 125
     },
     {
       "source": "PVLP046",
