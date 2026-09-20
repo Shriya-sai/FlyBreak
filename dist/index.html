@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>FlyBreak — Neural Heist</title>
+  <meta name="description" content="A tactical connectome sabotage game." />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23071113'/%3E%3Cpath d='M12 32h13l7-16v32l7-16h13' fill='none' stroke='%23c9ff3d' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="grain"></div>
+  <main class="app">
+    <header>
+      <div class="brand"><span class="mark">F/B</span><div><strong>FlyBreak</strong><small>NEURAL HEIST // MISSION 01</small></div></div>
+      <div class="top-stats">
+        <div><small>TURN</small><strong id="turnTop">0/5</strong></div>
+        <div><small>CONTAINMENT</small><strong id="containTop">0%</strong></div>
+        <button id="resetBtn" class="icon-btn" aria-label="Restart mission">↻ RESET</button>
+      </div>
+    </header>
+
+    <section class="mission-strip">
+      <div class="mission-copy"><span class="eyebrow">OPERATION: QUIET EXIT</span><h1>Stop the signal. <em>Spare the dance floor.</em></h1></div>
+      <p>Intercept visual input before it reaches the escape command. Preserve the courtship output. Try not to lobotomize the entire fly.</p>
+      <button id="startBtn" class="primary">BEGIN HEIST <span>→</span></button>
+    </section>
+
+    <section class="game-grid">
+      <aside class="panel loadout">
+        <div class="panel-title"><span>01</span> YOUR LOADOUT</div>
+        <button class="tool selected" data-tool="lesion"><span class="tool-icon">×</span><div><strong>LESION</strong><small>Permanent node removal</small></div><b id="lesionsLeft">2</b></button>
+        <button class="tool" data-tool="jam"><span class="tool-icon">⌁</span><div><strong>JAM</strong><small>Blocks the next pulse</small></div><b id="jamsLeft">2</b></button>
+        <div class="brief">
+          <small>MISSION PARAMETERS</small>
+          <dl><div><dt>Target</dt><dd>Escape command</dd></div><div><dt>Protect</dt><dd>Courtship output</dd></div><div><dt>Signal packets</dt><dd>3</dd></div></dl>
+        </div>
+        <button id="advanceBtn" class="advance" disabled>ADVANCE SIGNAL <span>→</span></button>
+      </aside>
+
+      <div class="board-wrap">
+        <div class="board-head"><div><span class="live-dot"></span><span id="systemState">NETWORK INTACT</span></div><div class="legend"><span class="cyan">● SIGNAL</span><span class="amber">● REROUTE</span><span class="red">● DISABLED</span></div></div>
+        <svg id="board" viewBox="0 0 900 570" role="img" aria-label="Interactive directed neural circuit"></svg>
+        <div id="toast" class="toast">Select a node to inspect it.</div>
+        <div id="startOverlay" class="start-overlay">
+          <div class="fly-badge">⌁</div><span>TACTICAL CONNECTOME // TRAINING SIM</span>
+          <h2>There’s a signal in the walls.</h2>
+          <p>It wants the red exit. You have five turns and four bad ideas. Make one of them brilliant.</p>
+          <button id="overlayStart" class="primary">START THE CLOCK <span>→</span></button>
+          <small>Average mission time: 74 seconds</small>
+        </div>
+      </div>
+
+      <aside class="panel intel">
+        <div class="panel-title"><span>02</span> NODE INTEL</div>
+        <div id="emptyIntel" class="empty-intel"><div class="crosshair">＋</div><p>Tap a node.<br>Question its life choices.</p></div>
+        <div id="nodeIntel" class="node-intel hidden">
+          <div class="node-label"><span id="nodeRole">GATE</span><strong id="nodeName">LC12 Gate</strong><small id="nodeId">TYPE GROUP // 18 NEURONS</small></div>
+          <div class="meter-row"><span>OUT STRENGTH</span><div><i id="strengthBar"></i></div><b id="strengthVal">72</b></div>
+          <div class="meter-row"><span>ROUTE LOAD</span><div><i id="loadBar"></i></div><b id="loadVal">61</b></div>
+          <div class="forecast"><small>STRUCTURAL FORECAST</small><p id="forecastText">A narrow gate on the target route. Quietly important. Suspiciously underdressed.</p></div>
+          <button id="actionBtn" class="danger">LESION NODE <span>×</span></button>
+        </div>
+        <div class="controller"><span>MISSION CONTROL</span><p id="quip">“The fly has no idea you’re here. Mostly because this is a graph.”</p></div>
+      </aside>
+    </section>
+
+    <footer><p><strong>MODEL NOTE</strong> Signal propagation over a curated directed, weighted structural graph. This is a hypothesis-generating game—not a biophysical simulation or a claim about fly behaviour.</p><button id="methodBtn">HOW IT WORKS +</button></footer>
+  </main>
+
+  <dialog id="resultDialog">
+    <div class="result-card">
+      <button class="close" aria-label="Close">×</button><span class="eyebrow">MISSION COMPLETE</span>
+      <div id="rank" class="rank">S</div><h2 id="resultTitle">SURGICAL SABOTEUR</h2><p id="resultCopy">You stopped the escape signal and left the dance floor humming.</p>
+      <div class="score-grid"><div><small>CONTAINMENT</small><strong id="finalContain">92%</strong></div><div><small>PRECISION</small><strong id="finalPrecision">96%</strong></div><div><small>STYLE</small><strong id="finalStyle">+12</strong></div></div>
+      <div class="bot-row"><span>YOU</span><i id="youBar"></i><b id="youScore">91</b></div><div class="bot-row"><span>WRECKER BOT</span><i style="--w:64%"></i><b>64</b></div><div class="bot-row"><span>NAVIGATOR</span><i style="--w:78%"></i><b>78</b></div>
+      <p class="insight" id="insight"><strong>What happened:</strong> You found a pathway-specific bottleneck. The obvious hub produced similar suppression, but damaged the protected route.</p>
+      <button id="replayBtn" class="primary">RUN IT BACK <span>↻</span></button>
+    </div>
+  </dialog>
+
+  <dialog id="methodDialog"><div class="method-card"><button class="close" aria-label="Close">×</button><span class="eyebrow">UNDER THE HOOD</span><h2>Structural, transparent, deterministic.</h2><p>Each turn sends three packets along the strongest available directed routes. A lesion removes all incoming and outgoing contributions. A jam masks one node for the next propagation step. Routes are recomputed after every intervention.</p><div class="formula">PRECISION = TARGET SUPPRESSION × PROTECTED PRESERVATION</div><p class="muted">This demo uses a curated, biologically inspired circuit artifact for reliable gameplay. The production data pipeline is designed to substitute verified neuron-type connectivity without changing the game engine.</p></div></dialog>
+  <script src="game.js"></script>
+</body>
+</html>
