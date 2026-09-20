@@ -57,6 +57,7 @@
         <svg id="board" viewBox="0 0 900 570" role="img" aria-label="Interactive directed neural circuit"></svg>
         <div id="routeCards" class="route-cards hidden"></div>
         <div id="toast" class="toast">Select a node to inspect it.</div>
+        <div id="replayBanner" class="replay-banner hidden"><small>INTERVENTION PLAYBACK</small><strong id="replayTitle">INTACT NETWORK</strong><span id="replayDetail">Establishing baseline propagation…</span><div id="replayProgress"></div></div>
         <div id="startOverlay" class="start-overlay">
           <div class="fly-badge">⌁</div><span>TACTICAL CONNECTOME // TRAINING SIM</span>
           <h2>There’s a signal in the walls.</h2>
@@ -91,7 +92,7 @@
       <div class="score-grid"><div><small>CONTAINMENT</small><strong id="finalContain">92%</strong></div><div><small>PRECISION</small><strong id="finalPrecision">96%</strong></div><div><small>STYLE</small><strong id="finalStyle">+12</strong></div></div>
       <div class="bot-row"><span>YOU</span><i id="youBar"></i><b id="youScore">91</b></div><div class="bot-row"><span>WRECKER BOT</span><i style="--w:64%"></i><b>64</b></div><div class="bot-row"><span>NAVIGATOR</span><i style="--w:78%"></i><b>78</b></div>
       <p class="insight" id="insight"><strong>What happened:</strong> You found a pathway-specific bottleneck. The obvious hub produced similar suppression, but damaged the protected route.</p>
-      <button id="replayBtn" class="primary">RUN IT BACK <span>↻</span></button>
+      <div class="result-actions"><button id="watchReplayBtn" class="replay-action">WATCH DAMAGE REPLAY <span>▶</span></button><button id="replayBtn" class="primary">RUN IT BACK <span>↻</span></button></div>
     </div>
   </dialog>
 
