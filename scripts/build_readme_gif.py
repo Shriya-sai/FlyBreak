@@ -126,17 +126,17 @@ def add_frame(stage, duration=600, step=0):
     durations.append(duration)
 
 
-add_frame("detect", 550, 0)
-add_frame("detect", 550, 1)
+add_frame("detect", 900, 0)
+add_frame("detect", 900, 1)
 for i in range(4):
-    add_frame("race", 430, i)
-add_frame("trap", 650, 0)
-add_frame("trap", 850, 1)
-add_frame("cut", 650, 0)
-add_frame("cut", 800, 1)
+    add_frame("race", 650, i)
+add_frame("trap", 1200, 0)
+add_frame("trap", 1800, 1)
+add_frame("cut", 1200, 0)
+add_frame("cut", 1800, 1)
 for i in range(1, 4):
-    add_frame("reroute", 430, i)
-add_frame("win", 1450)
+    add_frame("reroute", 650, i)
+add_frame("win", 2300)
 
 OUTPUT.parent.mkdir(parents=True, exist_ok=True)
 frames[0].save(
