@@ -57,6 +57,22 @@ The derived, reviewable level is committed at [`data/derived/malecns_lc4_dng108.
 6. Define route capacity as the weakest edge on that route—the graph-theoretic bottleneck.
 7. Recompute the surviving routes after every signal pulse. Target suppression becomes containment; damage to protected structural routes reduces precision.
 
+### What “curated” means here
+
+The game does not present every edge in MaleCNS. It uses a deliberately small challenge subgraph so a player can read and manipulate the circuit in 30 seconds. The build script first selects the relevant `LC4` → `DNg108` and protected-output neighborhood, then keeps a fixed, reviewable list of 43 measured directed connections. Four of those connections fall below the general 120-synapse display threshold; they are retained explicitly because they create two real shared-gate routes that make collateral damage possible. No synthetic connections are added.
+
+The exact selected edge pairs, including those four exceptions, live in [`scripts/build_real_level.py`](scripts/build_real_level.py). Every runtime edge is then loaded from the generated JSON—there is no second hand-written graph in the browser code.
+
+### Three layers of numbers
+
+| Layer | Meaning | Examples |
+| --- | --- | --- |
+| Raw data | Values copied from the official artifact | directed type-group endpoints, male synapse totals |
+| Derived graph metrics | Deterministic calculations from the selected subgraph | simple paths, bottleneck capacity, weighted degree, protected reachability |
+| Game metrics | Explicit rules layered on the graph | 30-second timer, Cut/Jam effects, containment, precision, collateral penalties |
+
+The finish-screen comparisons are computed from the same graph engine at load time. **Wrecker** cuts the highest weighted-degree eligible nodes, **Navigator** greedily chooses the next cut with the best game score, and **Random** reports a seeded 64-run distribution. These are transparent gameplay policies, not scientific models or prewritten scores.
+
 The preprocessing is reproducible with [`scripts/build_real_level.py`](scripts/build_real_level.py) after placing the official source artifact at `data/source/mcns_fw_edge_comp.feather`:
 
 ```bash
@@ -76,6 +92,21 @@ FlyBreak is a **structural graph game**, not a biophysical simulation.
 
 The animated courier flies show the graph algorithm moving through available paths. They do **not** depict measured neural activity.
 
+## Architecture
+
+```mermaid
+flowchart LR
+    A[Official MaleCNS Feather artifact] --> B[build_real_level.py]
+    B --> C[Derived, reviewable JSON]
+    C --> D[Shared graph engine]
+    D --> E[Live game and rerouting]
+    D --> F[Replay snapshots]
+    D --> G[Computed bot baselines]
+    D --> H[Automated tests]
+```
+
+`dist/graph-engine.js` is the single rules engine used by the live game, replay, baselines, and Node test suite. The interface contributes presentation metadata—positions, labels, and dialogue—but not a duplicate edge list.
+
 ## Run locally
 
 Requirements: a recent version of Node.js and npm.
@@ -90,6 +121,16 @@ Open [http://127.0.0.1:4173](http://127.0.0.1:4173).
 
 No API keys or backend services are required.
 
+Run the graph-engine test suite with:
+
+```bash
+npm test
+```
+
+## Project attribution
+
+Built for **Fruit Fly-athon 2026** by Shriya Sai. FlyBreak’s source code and original assets are released under the [MIT License](LICENSE); the underlying MaleCNS dataset retains its separate CC BY terms described below.
+
 ## Data attribution
 
 FlyBreak uses data released with **MaleCNS v1.0** by the Fly Connectome project. The dataset is provided under **CC BY**, so downstream reuse should retain attribution to the original dataset and authors.
@@ -99,3 +140,16 @@ FlyBreak uses data released with **MaleCNS v1.0** by the Fly Connectome project.
 - Source table used by this project: `supplemental_data/mcns_fw_edge_comp.feather`
 
 FlyBreak's circuit selection, game mechanics, interface, and explanatory text are project-level additions built on top of that attributed dataset.
+
+### Citation
+
+If you use the game or its derived level, please cite both this repository and the underlying MaleCNS release:
+
+```text
+Sai, Shriya (2026). FlyBreak: a real-time structural-intervention game
+built from the MaleCNS v1.0 fruit-fly connectome.
+https://github.com/Shriya-sai/FlyBreak
+
+Fly Connectome Project. MaleCNS v1.0 adult male Drosophila connectome.
+https://male-cns.janelia.org/download/
+```

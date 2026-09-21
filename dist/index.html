@@ -5,6 +5,15 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>FlyBreak — Neural Heist</title>
   <meta name="description" content="A tactical connectome sabotage game." />
+  <meta property="og:title" content="FlyBreak — Neural Heist" />
+  <meta property="og:description" content="Defuse a neural signal before a fruit fly reroutes around you." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://flybreak-neural-heist.shriyasai8.chatgpt.site" />
+  <meta property="og:image" content="https://flybreak-neural-heist.shriyasai8.chatgpt.site/social-preview.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="FlyBreak — Neural Heist" />
+  <meta name="twitter:description" content="Defuse a neural signal before a fruit fly reroutes around you." />
+  <meta name="twitter:image" content="https://flybreak-neural-heist.shriyasai8.chatgpt.site/social-preview.png" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23071113'/%3E%3Cpath d='M12 32h13l7-16v32l7-16h13' fill='none' stroke='%23c9ff3d' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -91,14 +100,15 @@
       <button class="close" aria-label="Close">×</button><span class="eyebrow">MISSION COMPLETE</span>
       <div id="rank" class="rank">S</div><h2 id="resultTitle">SURGICAL SABOTEUR</h2><p id="resultCopy">You stopped the target signal while preserving unrelated routes.</p>
       <div class="score-grid"><div><small>CONTAINMENT</small><strong id="finalContain">92%</strong></div><div><small>PRECISION</small><strong id="finalPrecision">96%</strong></div><div><small>STYLE</small><strong id="finalStyle">+12</strong></div></div>
-      <div class="bot-row"><span>YOU</span><i id="youBar"></i><b id="youScore">91</b></div><div class="bot-row"><span>WRECKER BOT</span><i style="--w:64%"></i><b>64</b></div><div class="bot-row"><span>NAVIGATOR</span><i style="--w:78%"></i><b>78</b></div>
+      <div class="bot-row"><span>YOU</span><i id="youBar"></i><b id="youScore">91</b></div><div class="bot-row"><span>WRECKER BOT</span><i id="wreckerBar"></i><b id="wreckerScore">—</b></div><div class="bot-row"><span>NAVIGATOR</span><i id="navigatorBar"></i><b id="navigatorScore">—</b></div><div class="bot-row"><span>RANDOM ×64</span><i id="randomBar"></i><b id="randomScore">—</b></div>
       <p class="insight" id="insight"><strong>What happened:</strong> You found a pathway-specific bottleneck. The obvious hub produced similar suppression, but damaged the protected route.</p>
       <div class="result-actions"><button id="watchReplayBtn" class="replay-action">WATCH DAMAGE REPLAY <span>▶</span></button><button id="replayBtn" class="primary">RUN IT BACK <span>↻</span></button></div>
     </div>
   </dialog>
 
-  <dialog id="methodDialog"><div class="method-card"><button class="close" aria-label="Close">×</button><span class="eyebrow">UNDER THE HOOD</span><h2>Structural, transparent, deterministic.</h2><p>Every four seconds the opponent recomputes up to eight directed LC4→DNg108 routes with distinct final gates. AN_multi_12 and CL342 also carry measured connectivity to protected DNa13, so cutting them costs precision. Their quieter upstream relays are safer targets.</p><div class="formula">SCORE = TARGET SUPPRESSION − COLLATERAL PENALTY</div><p class="muted">The model uses structural connections only. It does not include membrane dynamics, physiology, neuromodulation, plasticity or embodiment.</p></div></dialog>
-  <dialog id="flyDialog"><div class="method-card"><button class="close" aria-label="Close">×</button><span class="eyebrow">VERIFIED DATA PROVENANCE</span><h2>This level is derived from MaleCNS v1.0.</h2><p>Nodes are real cross-matched MaleCNS cell-type groups. Edges are measured male synapse totals from the official <code>mcns_fw_edge_comp.feather</code> artifact. The level uses LC4 as source, DNg108 as target, and DNa13 plus DNa02 as protected outputs.</p><div class="formula">21 REAL TYPE GROUPS · 43 DISPLAYED EDGES<br>EDGE WEIGHTS: 19–11,597 MALE SYNAPSES</div><p class="muted">The circuit was curated from the official table for gameplay and is licensed CC BY. Courier flies visualize graph routing; they are not measured neural activity or evidence of behaviour.</p></div></dialog>
+  <dialog id="methodDialog"><div class="method-card"><button class="close" aria-label="Close">×</button><span class="eyebrow">UNDER THE HOOD</span><h2>Structural, transparent, deterministic.</h2><p>Every four seconds the opponent recomputes up to eight directed LC4→DNg108 routes with distinct final gates. AN_multi_12 and CL342 also carry measured connectivity to protected DNa13, so cutting them costs precision. Their quieter upstream relays are safer targets.</p><div class="formula">RAW: EDGES · WEIGHTS · PATH BOTTLENECKS<br>DERIVED: SURVIVING TARGET + PROTECTED CAPACITY<br>GAME: BONUSES · PENALTIES · RANK THRESHOLDS</div><p class="muted">The 0–100 scores are game metrics, not biological probabilities. Wrecker, Navigator and Random baselines are computed from explicit deterministic policies on this graph.</p></div></dialog>
+  <dialog id="flyDialog"><div class="method-card"><button class="close" aria-label="Close">×</button><span class="eyebrow">VERIFIED DATA PROVENANCE</span><h2>A curated challenge derived from MaleCNS v1.0.</h2><p>Nodes are real cross-matched MaleCNS cell-type groups. Edges are measured male synapse totals from the official <code>mcns_fw_edge_comp.feather</code> artifact. Four measured connections below the general 120-synapse display threshold were retained because they complete two interpretable shared-output routes.</p><div class="formula">21 REAL TYPE GROUPS · 43 DISPLAYED EDGES<br>EDGE WEIGHTS: 19–11,597 MALE SYNAPSES</div><p class="muted">This is a real-connectivity puzzle, not an unbiased extraction or an estimate of how common these motifs are in the complete connectome. Courier flies visualize graph routing—not measured neural activity.</p></div></dialog>
+  <script src="graph-engine.js"></script>
   <script src="game.js"></script>
 </body>
 </html>

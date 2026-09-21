@@ -2,6 +2,7 @@
   "name": "flybreak",
   "private": true,
   "scripts": {
-    "dev": "node server.mjs"
+    "dev": "node server.mjs",
+    "test": "node --test"
   }
 }

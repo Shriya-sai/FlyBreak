@@ -12,7 +12,47 @@
     ],
     "aggregation": "cross-matched cell-type groups",
     "minimum_male_synapse_weight": 19,
-    "selection_note": "Curated LC4-to-descending subgraph with two measured low-weight shared-gate routes and protected off-target outputs."
+    "selection_note": "Curated challenge derived from measured edges, with two low-weight shared-gate routes and protected off-target outputs.",
+    "curated_low_weight_edges": [
+      [
+        "CB0623",
+        "AN_multi_12"
+      ],
+      [
+        "LC4",
+        "CB0623"
+      ],
+      [
+        "LC4",
+        "PLP060"
+      ],
+      [
+        "PLP060",
+        "CL342"
+      ]
+    ]
+  },
+  "rules": {
+    "source": "LC4",
+    "target": "DNg108",
+    "max_target_paths": 8,
+    "target_baseline_capacity": 2604,
+    "protected_targets": [
+      {
+        "id": "DNa13",
+        "path_count": 2,
+        "baseline_capacity": 1052
+      },
+      {
+        "id": "DNa02",
+        "path_count": 2,
+        "baseline_capacity": 906
+      }
+    ],
+    "shared_gate_penalties": {
+      "AN_multi_12": 14,
+      "CL342": 8
+    }
   },
   "nodes": [
     {
@@ -101,11 +141,6 @@
     }
   ],
   "edges": [
-    {
-      "source": "AN_multi_12",
-      "target": "CB0623",
-      "weight": 227
-    },
     {
       "source": "AN_multi_12",
       "target": "DNa13",
@@ -262,19 +297,9 @@
       "weight": 862
     },
     {
-      "source": "LT51",
-      "target": "PLP060",
-      "weight": 148
-    },
-    {
       "source": "PLP060",
       "target": "CL342",
       "weight": 51
-    },
-    {
-      "source": "PLP060",
-      "target": "SAD064",
-      "weight": 125
     },
     {
       "source": "PVLP046",
@@ -285,11 +310,6 @@
       "source": "PVLP046",
       "target": "DNp35",
       "weight": 123
-    },
-    {
-      "source": "PVLP046",
-      "target": "LC4",
-      "weight": 3768
     },
     {
       "source": "PVLP046",
@@ -335,11 +355,6 @@
       "source": "SAD064",
       "target": "DNp11",
       "weight": 576
-    },
-    {
-      "source": "SAD064",
-      "target": "LC4",
-      "weight": 1241
     }
   ]
 }
