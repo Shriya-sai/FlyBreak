@@ -2,13 +2,13 @@
 
 > **Save the cake. Spare the fly. Break the circuit.**
 
+![FlyBreak gameplay loop: a live signal races through the connectome, a shared gate reveals collateral risk, and the player cuts upstream before the fly reroutes](docs/flybreak-demo.gif)
+
+**CUT pathways. JAM nodes. Protect collateral circuitry. You have 30 seconds. The fly has eight escape routes.**
+
 ## One-sentence concept
 
 FlyBreak is a real-time neural-heist game where you race a fruit fly through a graph derived from its connectome, cutting target pathways without destroying protected circuitry.
-
-## Screenshot
-
-![FlyBreak gameplay showing the MaleCNS circuit, active reroutes, node intel, and collateral-damage score](https://github.com/user-attachments/assets/944d6b9a-4e2c-4350-928c-2b9e8ce24a13)
 
 ## How the game works
 
@@ -22,6 +22,8 @@ A visual signal begins at the real MaleCNS cell-type group `LC4` and tries to re
 - A detailed replay walks through every intervention, reroute, containment change, and collateral event.
 
 In other words: the fly has eight backup plans, and you have thirty seconds to become a very tiny network engineer.
+
+![FlyBreak mid-mission gameplay showing active routes, node intelligence, and the collateral-damage score](docs/flybreak-gameplay.png)
 
 ## Why this is interesting
 
