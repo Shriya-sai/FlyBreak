@@ -2,7 +2,9 @@
 
 > **Save the cake. Spare the fly. Break the circuit.**
 
-![FlyBreak gameplay loop: a live signal races through the connectome, a shared gate reveals collateral risk, and the player cuts upstream before the fly reroutes](docs/flybreak-demo.gif)
+[![FlyBreak gameplay loop: a live signal races through the connectome, a shared gate reveals collateral risk, and the player cuts upstream before the fly reroutes](https://raw.githubusercontent.com/Shriya-sai/FlyBreak/main/docs/flybreak-demo.gif?v=3)](https://flybreak-neural-heist.shriyasai8.chatgpt.site)
+
+*Watch the intervention unfold, or click the animation to play FlyBreak.*
 
 **CUT pathways. JAM nodes. Protect collateral circuitry. You have 30 seconds. The fly has eight escape routes.**
 
